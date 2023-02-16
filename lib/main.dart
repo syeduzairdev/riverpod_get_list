@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:riverpod_crud/screen/homepage.dart';
+import 'package:riverpod_crud/screen/homepage/homepage.dart';
 
 void main() {
   runApp(const MyApp());

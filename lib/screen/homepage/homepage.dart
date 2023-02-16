@@ -2,12 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:riverpod_crud/controller/user_controller.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class Homepage extends ConsumerWidget {
+import '../update_user/update_user.dart';
+
+class Homepage extends ConsumerStatefulWidget {
   const Homepage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<ConsumerStatefulWidget> createState() => _HomepageState();
+}
+
+class _HomepageState extends ConsumerState<Homepage> {
+  @override
+  Widget build(BuildContext context) {
     final usersState = ref.watch(usersProvider);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Riverpod CRUD'),
@@ -18,9 +26,21 @@ class Homepage extends ConsumerWidget {
             itemCount: users.length,
             itemBuilder: (context, index) {
               final user = users[index];
-              return ListTile(
-                title: Text(user.name),
-                subtitle: Text(user.email),
+              return InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => UserUpdateScreen(
+                        user: user,
+                      ),
+                    ),
+                  );
+                },
+                child: ListTile(
+                  title: Text(user.name),
+                  subtitle: Text(user.email),
+                ),
               );
             },
           );

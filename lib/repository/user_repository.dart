@@ -6,18 +6,36 @@ import '../model/user_model.dart';
 //we parse the response body into a list of User
 
 class UsersRepository {
-  // final String _baseUrl = 'https://jsonplaceholder.typicode.com';
-
-  // Future<List<User>> getUsers() async {
-  //   final response = await http.get(Uri.parse('$_baseUrl/users'));
-  //   if (response.statusCode == 200) {
-  //     final jsonList = json.decode(response.body) as List<dynamic>;
-  //     return jsonList.map((json) => User.fromJson(json)).toList();
-  //   } else {
-  //     throw Exception('Failed to load users');
-  //   }
-  // }
+  //get all user
   List<User> getUser() {
     return UsersJson.map((json) => User.fromJson(json)).toList();
+  }
+
+  //get user by user id
+  getUserById(int id) {
+    return UsersJson.map((json) => User.fromJson(json))
+        .toList()
+        .firstWhere((element) => element.id == id);
+  }
+
+//update user
+  updateUser(User user) {
+    return UsersJson.map((json) => User.fromJson(json))
+        .toList()
+        .firstWhere((element) => element.id == user.id);
+  }
+
+  //create user
+  createUser(User user) {
+    return UsersJson.map((json) => User.fromJson(json))
+        .toList()
+        .firstWhere((element) => element.id == user.id);
+  }
+
+  //delete user
+  deleteUser(User user) {
+    return UsersJson.map((json) => User.fromJson(json))
+        .toList()
+        .firstWhere((element) => element.id == user.id);
   }
 }
