@@ -3,7 +3,7 @@
 List UsersJson = [
   {
     "id": 1,
-    "name": "Leanne Graham",
+    "name": "Syed UZair",
     "email": "xyz@gmail.com",
   },
   {
@@ -11,6 +11,19 @@ List UsersJson = [
     "name": "Ervin Howell",
     "email": "xyz@gmail.com",
   },
-  {"id": 3, "name": "Clementine Bauch", "email": "xyz@gmail.com"},
-  {"id": 4, "name": "Patricia Lebsack", "email": "xyz@gmail.com"},
+  {
+    "id": 3,
+    "name": "Clementine Bauch",
+    "email": "xyz@gmail.com",
+  },
+  {
+    "id": 4,
+    "name": "Patricia Lebsack",
+    "email": "xyz@gmail.com",
+  },
+  {
+    "id": 5,
+    "name": "Chelsey Dietrich",
+    "email": "xyz@gmail.com",
+  }
 ];
